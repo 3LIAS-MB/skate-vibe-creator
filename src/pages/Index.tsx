@@ -1,6 +1,7 @@
 
 import { NavBar } from "@/components/site/nav-bar";
 import { ProductCard } from "@/components/site/product-card";
+import { Button } from "@/components/ui/button";
 
 // Dummy data for products
 const featuredProducts = [
