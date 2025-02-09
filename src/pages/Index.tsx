@@ -7,98 +7,135 @@ import { Button } from "@/components/ui/button";
 const featuredProducts = [
   {
     id: "1",
-    name: "Pro Deck Series X",
+    name: "Street Legend Deck",
     price: 59.99,
     image: "https://images.unsplash.com/photo-1547447134-cd3f5c716030",
-    brand: "SkateX",
+    brand: "Urban Skate Co.",
   },
   {
     id: "2",
-    name: "Street Wheels Elite",
+    name: "Pro Series Wheels",
     price: 34.99,
     image: "https://images.unsplash.com/photo-1547447134-cd3f5c716030",
-    brand: "RollerPro",
+    brand: "Street Kings",
   },
   {
     id: "3",
     name: "Premium Trucks V2",
     price: 44.99,
     image: "https://images.unsplash.com/photo-1547447134-cd3f5c716030",
-    brand: "TruckMaster",
+    brand: "Master Ride",
   },
   {
     id: "4",
-    name: "Urban Deck Classic",
+    name: "Urban Classic Deck",
     price: 49.99,
     image: "https://images.unsplash.com/photo-1547447134-cd3f5c716030",
-    brand: "UrbanSkate",
+    brand: "City Skaters",
   },
 ];
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-skate-black">
       <NavBar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto mt-16">
-          <div className="relative h-[500px] rounded-xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-skate-charcoal to-transparent z-10" />
-            <img
-              src="https://images.unsplash.com/photo-1564982752979-3f7bc974d29a"
-              alt="Skateboarding"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center z-20 px-8 sm:px-16">
-              <div className="max-w-xl">
-                <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                  Ride with Style
-                </h1>
-                <p className="text-lg text-gray-200 mb-8">
-                  Discover our new collection of premium skateboards and accessories
-                </p>
-                <Button className="bg-skate-blue hover:bg-skate-charcoal text-white px-8 py-3 rounded-lg text-lg transition-colors">
-                  Shop Now
-                </Button>
-              </div>
+      <section className="relative h-screen">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1564982752979-3f7bc974d29a"
+            alt="Skateboarding"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-skate-black/80 to-transparent" />
+        </div>
+        <div className="relative h-full flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl">
+              <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+                BACK TO SCHOOL
+              </h1>
+              <p className="text-xl text-skate-gold mb-8 animate-fade-in delay-100">
+                Get ready for the new season with our latest collection
+              </p>
+              <Button 
+                className="bg-skate-gold hover:bg-skate-rustic text-skate-black px-8 py-6 text-lg font-bold transition-colors animate-fade-in delay-200"
+              >
+                Shop Now
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-skate-charcoal">Featured Products</h2>
-            <Button variant="outline" className="text-skate-blue border-skate-blue hover:bg-skate-blue hover:text-white">
-              View All
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
+      {/* Categories Grid */}
+      <section className="py-16 container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {['REMERAS', 'PANTALONES', 'ACCESORIOS', 'SKATES'].map((category, index) => (
+            <div key={category} className="group relative overflow-hidden rounded-lg">
+              <div className="aspect-[4/5] relative">
+                <img 
+                  src={`https://images.unsplash.com/photo-${1547447134 + index}-cd3f5c716030`}
+                  alt={category}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-skate-black/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-white text-xl font-bold">{category}</h3>
+                  <Button 
+                    variant="link" 
+                    className="text-skate-gold hover:text-white transition-colors mt-2"
+                  >
+                    Shop Now
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-skate-charcoal mb-8">Shop by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['Decks', 'Wheels', 'Trucks', 'Clothing'].map((category) => (
-              <div key={category} className="relative group cursor-pointer overflow-hidden rounded-lg">
-                <div className="aspect-square bg-gray-100 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-skate-charcoal/20 group-hover:bg-skate-charcoal/40 transition-colors" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">{category}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+      {/* Featured Products */}
+      <section className="py-16 container mx-auto px-4">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-white">Featured Products</h2>
+          <Button 
+            variant="outline" 
+            className="border-skate-gold text-skate-gold hover:bg-skate-gold hover:text-skate-black"
+          >
+            View All
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </div>
+      </section>
+
+      {/* Promotional Banner */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="relative bg-skate-wood rounded-lg overflow-hidden">
+            <div className="absolute inset-0">
+              <img 
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"
+                alt="Promo"
+                className="w-full h-full object-cover opacity-50"
+              />
+            </div>
+            <div className="relative py-16 px-8 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold text-skate-gold mb-4">
+                6 CUOTAS SIN INTERÉS
+              </h2>
+              <p className="text-white text-lg mb-8">
+                En todos los productos de la tienda
+              </p>
+              <Button className="bg-skate-gold hover:bg-skate-rustic text-skate-black font-bold">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>

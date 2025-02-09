@@ -21,11 +21,13 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         skate: {
-          charcoal: "#403E43",
-          white: "#FFFFFF",
-          blue: "#1EAEDB",
-          gray: "#8A898C",
-          dark: "#221F26"
+          black: "#010207",
+          gold: "#E9BA27",
+          rustic: "#786427",
+          brown: "#332D1D",
+          wood: "#3E2F1C",
+          coffee: "#21190F",
+          earth: "#4D413C"
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -57,23 +59,18 @@ export default {
         },
       },
       keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "fade-out": {
-          "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(10px)" },
-        },
         "slide-in": {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
-        "fade-in": "fade-in 0.3s ease-out",
-        "fade-out": "fade-out 0.3s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },
