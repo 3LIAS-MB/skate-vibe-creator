@@ -1,6 +1,12 @@
 
-import { ShoppingCart, Menu, Search, User } from "lucide-react";
+import { ShoppingCart, Menu, Search, User, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const NavBar = () => {
   return (
@@ -17,17 +23,36 @@ export const NavBar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/decks" className="text-skate-charcoal hover:text-skate-blue transition-colors">
-              Decks
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center space-x-1">
+                  <span>Categories</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-48 bg-white">
+                <DropdownMenuItem>
+                  <a href="/decks" className="w-full">Decks</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/wheels" className="w-full">Wheels</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/trucks" className="w-full">Trucks</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/clothing" className="w-full">Clothing</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/accessories" className="w-full">Accessories</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <a href="/new-arrivals" className="text-skate-charcoal hover:text-skate-blue transition-colors">
+              New Arrivals
             </a>
-            <a href="/wheels" className="text-skate-charcoal hover:text-skate-blue transition-colors">
-              Wheels
-            </a>
-            <a href="/trucks" className="text-skate-charcoal hover:text-skate-blue transition-colors">
-              Trucks
-            </a>
-            <a href="/clothing" className="text-skate-charcoal hover:text-skate-blue transition-colors">
-              Clothing
+            <a href="/sale" className="text-skate-charcoal hover:text-skate-blue transition-colors">
+              Sale
             </a>
           </div>
 
