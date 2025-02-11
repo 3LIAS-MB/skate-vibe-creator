@@ -1,6 +1,6 @@
-
-import { ShoppingCart, Menu, Search, User, ChevronDown } from "lucide-react";
+import { ShoppingCart, Menu, User, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SearchDrawer } from "@/components/site/search-drawer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
 
 export const NavBar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-skate-coffee/80 dark:border-skate-brown">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -174,9 +174,7 @@ export const NavBar = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <Search className="h-5 w-5" />
-            </Button>
+            <SearchDrawer />
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
             </Button>
@@ -192,4 +190,3 @@ export const NavBar = () => {
     </nav>
   );
 };
-
