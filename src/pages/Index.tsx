@@ -37,18 +37,18 @@ const featuredProducts = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-skate-black">
+    <div className="min-h-screen bg-skate-black dark:bg-skate-coffee">
       <NavBar />
       
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative h-[510px]">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1564982752979-3f7bc974d29a"
             alt="Skateboarding"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-skate-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-skate-black/80 to-transparent dark:from-skate-coffee/90" />
         </div>
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4">
@@ -80,7 +80,7 @@ const Index = () => {
                   alt={category}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-skate-black/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-skate-black/80 to-transparent dark:from-skate-coffee/90" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <h3 className="text-white text-xl font-bold">{category}</h3>
                   <Button 
@@ -117,7 +117,7 @@ const Index = () => {
       {/* Promotional Banner */}
       <section className="relative py-20 overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="relative bg-skate-wood rounded-lg overflow-hidden">
+          <div className="relative bg-skate-wood dark:bg-skate-coffee rounded-lg overflow-hidden">
             <div className="absolute inset-0">
               <img 
                 src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"
